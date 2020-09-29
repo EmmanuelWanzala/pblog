@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Montserrat|Neucha|Noto+Serif+JP|Noto+Serif+KR|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://icon2.kisspng.com/20180412/xiw/kisspng-paper-sunset-shimmer-quill-cutie-mark-crusaders-bo-write-5acf53a3231648.3205577215235368031437.jpg">
+{% endblock %}
+
+
+
+{% block content %}
+<br><br><br>
+
+<div class="col-md-8">
+{% for post in posts %}
+
+  <div class="panel">
+    <div class="panel-body responsive">
+      <div class="col-md-8">
+        <div class="text-center">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.posted.strftime('%Y-%m-%d')}}/<a href="#">{{post.category}}</a>/<a href="/post/{{post.id}}?like=1"<i class="fas fa-heart"></i>{{post.like}}</a></h4>
+  </div>
+    <br>
+
+    <p>{{post.post|truncate(350)}}</p>
+    <div class="text-center">
+    <a href="/post/{{post.id}}" >CONTINUE READING...</a>
+  </div>
+  </div>
+  <div id="img" class="col-md-4">
+    <img src="{{url_for('static',filename='css/people.jpg')}}" class="img-rounded img-responsive">
+  </div>
+</div>
+  </div>
+{% endfor %}
+</div>
+<div class="jumbotron">
+  <p>Today marks the 10th anniversary of the tragedy that struck Haiti on January 12, 2010. The devastated and massive 7.0 earthquake affected an estimated three million people, with a death toll of 100,000-160,000. To this day, the path to recovery and long-term development is not an easy one. Many Haitians continue to face multiple challenges, including political instability, food insecurity, sanitation, lack of access to healthcare, and more. Though medical care was widely recognized as a key component of humanitarian aid efforts, dental care was usually a low priority. This was hugely problematic because dental care and related complications are extraordinarily expensive to treat once they’ve progressed can severely decrease quality of life. 
+
+
+    "The word ‘aid’ likely conjures up images of volunteers delivering food to severely malnourished children, or doctors performing dramatic, life-saving operations. While food and emergency medicine are undeniably extremely important, so is a far less publicized kind of care: dental." said Jean Paul Laurent, Founder, and Chief Smiling Officer 
+    
+    
+     That’s where the Unspoken Smiles Foundation, a non-profit organization dedicated to teaching proper oral hygiene skills and healthy habits to children living in under-served communities around the world, comes in. In March 2011, Haiti native Jean Paul Laurent traveled back home to assist with a camp in Petion-Ville. During his time working at a camp in Petion-Ville, Laurent was struck by the children’s persistent smiles in the face of overwhelming hardship. Equally arresting was the dental deterioration evident in those smiles – a consequence of insufficient dental care in the wake of the earthquake. Laurent realized that behind each smile hid an unspoken story waiting to be told – a thought that became the seed of Unspoken Smiles. 
+    
+    
+    
+    
+    After winning a resolution project fellowship that would provide resources and seed funding led to the initiation of a pilot program in Jacmel, Haiti. The pilot program began in May 2014 and met with tremendous success. This first step has provided up to $20,000 worth of services to help more than 1,000 children improve their dental health and build the foundation for a healthier life.  
+    
+    
+     As of 2020, the Unspoken Smiles Foundation has served over 7,000 children in 8 countries across 4 continents in Haiti, India, Romania, El Salvador, Iraqi Kurdistan, Guatemala, Dominican Republic, and the USA. 
+    
+    
+    Laurent is ready to replicate this model in more regions across the world with the bold vision to turn Unspoken Smiles into an effective and efficient organization dedicated to bringing primary oral health care to everyone, every day, everywhere. Ten years on, we remember how much we have done and how much more there is to do for the children in Haiti.
+    
+    To support Unspoken Smiles Financially please visit the link!
+    
+    
+    
+     
+    
+    About Unspoken Smiles:
+    
+    Unspoken Smiles Foundation, Inc is a registered 501(c)(3) New York State nonprofit organization— focusing on promoting both long-term oral health and economic security in the world's most disadvantaged regions. Contributions to the Unspoken Smiles Foundation in the United States are tax-exempt to the extent provided by Law.
+    
+    </p>
+</div>
+
+
+
+
+
+<div class="col-md-4 ">
+<div class="panel" id="subcribeform">
+  <div class="panel-body">
+    <h4>Subscribe to our Blog</h4>
+
+  {{wtf.quick_form(subscriber_form)}}
+  {{simplemde.load}}
+</div>
+</div>
+</div>
+{% endblock %}

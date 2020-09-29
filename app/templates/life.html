@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Montserrat|Neucha|Noto+Serif+JP|Noto+Serif+KR|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://icon2.kisspng.com/20180412/xiw/kisspng-paper-sunset-shimmer-quill-cutie-mark-crusaders-bo-write-5acf53a3231648.3205577215235368031437.jpg">
+{% endblock %}
+
+
+
+{% block content %}
+<br><br><br>
+
+<div class="col-md-8">
+{% for post in posts %}
+
+  <div class="panel">
+    <div class="panel-body responsive">
+      <div class="col-md-8">
+        <div class="text-center">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.posted.strftime('%Y-%m-%d')}}/<a href="#">{{post.category}}</a>/<a href="/post/{{post.id}}?like=1"<i class="fas fa-heart"></i>{{post.like}}</a></h4>
+  </div>
+    <br>
+
+    <p>{{post.post|truncate(350)}}</p>
+    <div class="text-center">
+    <a href="/post/{{post.id}}" >CONTINUE READING...</a>
+  </div>
+  </div>
+  <div id="img" class="col-md-4">
+    <img src="{{url_for('static',filename='css/cosmic.jpg')}}" class="img-rounded img-responsive">
+  </div>
+</div>
+  </div>
+{% endfor %}
+</div>
+<div class="jumbotron">
+  <p>What is the purpose of life?
+    A warm welcome on Think One Week!
+    
+    Did you ever take some time to tink about the big life questions?…Like
+    
+    What are my goals in life? And have I been able to reach them yet?
+    How valuable is my life? Am I really loved by someone?
+    Is life making sense anyway? Does my life matter?
+    How will my future look like?
+    And what happens after death?
+    These are not the easiest questions to answer… Today you are challenged to think about your life and your future for one week. An investment that will be worth it if you give it a chance!
+    
+    Think One Week offers you a 7-day programme to learn meaningful insights about your life and future. It’s all for free! This program was written in our spare time. We would like to share the valuable insights we have discovered.
+    
+    Discover why your life is really important!
+    Through our 7-day programme we offer you some useful life questions to think about. We also offer you some answers on these questions but we encourage you to learn more about it yourself.
+    
+    You can read it all at once but we advise you to read and think about your life for the next 7 days. It may become the most valuable week of your life!
+    
+    You do’nt always have to agree with the issues presented on this website, but we hope you will read it with an open mind and create your own opinion.
+    If you do not agree, we encourage you to search for the truth yourself.
+    It can be very valuable in your life. So take some time and invest one week in your life and future!
+    
+    Reading will take just a few minutes per day. How much time you spend on thinking is all up to you.
+    
+    So, if you’d like to discover how your life can be really meaningful, continue reading…
+    
+    > Start your week!…
+    A meaningful life?
+    A meaningful life?
+    Every person sometimes wonders what the meaning of life is. Not everyone takes the trouble to discover this for themselves....
+    Read in your language
+    Read in your language
+    Read in your own language: Thanks to the help of many friends, this website is available in many other languages......
+    Free E-book
+    Free E-book
+    Get your free copy of the Think One Week e-book now... Download as ePub (smartphones, kindle) 300 kB Download as...
+    E-mail reminder
+    E-mail reminder
+    Really great! You want to think about your life for one week. Subscribe to our e-mail reminder. You will recieve...
+    Impressed by the Coronavirus
+    Impressed by the Coronavirus
+    Are you also concerned about your health or your financial future? Maybe you are already infected with the virus or...
+    Do we Need That Many Friends?
+    Do we Need That Many Friends?
+    Friendship had always been difficult for me. I was one of those kids who found himself on the outside looking...
+    Are You Burning Out…?
+    Are You Burning Out…?
+    Stress isn’t all in your head. It doesn’t just impact your thoughts and attitudes. Though it often begins there, stress...
+    11 Tips for a Successful Life
+    11 Tips for a Successful Life
+    If you want to live a successful life, you first have to think about your definition of success. What do...
+    The Value of Your Life Quiz
+    The Value of Your Life Quiz
+      What is The Value of human Life? How can we determine the value of human life? There are several...
+    Who is in control of my life?
+    Who is in control of my life?
+    Ever wonder who’s actually in control of your life? We live our lives, work and play. Our hard work often...
+    I’ll be there for you!
+    I’ll be there for you!
+    Who's your true friend? I have recently been watching some old episodes of “Friends” on Netflix. The theme song became...
+    Discover Your Goal in Life
+    Our mission is to help people give meaning to their lives. By consciously thinking for one week about your life, we hope that you will discover your goal in your life.
+    
+    You can sometimes walk around with an unconscious need for meaning. This can be expressed in a sense of meaninglessness. You can find a short-term satisfaction in money, sex, drugs, music and sound, but sooner or later you discover that these are all temporary and do not offer lasting satisfaction.
+    
+    We want you to discover there is more to life and that there is a great destination waiting for you!
+    
+    Do you want to learn more? It is all free and does not require you to do anything
+    
+    Discover your goal…
+    Read in your own language:
+    Thanks to the help of many friends, this website is available in many other languages… Read it in your own:
+    
+      bengali translation  chinese translation    german translation - deutsch     Maly translation   potugese translation - Poutugues   spanish translation - espanol Tagalog Translation Think One Week  Telegu translation Sinhalese Sri Lanka Translation  
+    
+    Why ThinkOneWeek?
+    Your Week originated from an initiative to help people on their way to finding the goal in their lives. So many people live without discovering that their lives are valuable.
+    
+    Highlighted projects
+    We’re not only active online, but our foundation supports several local projects. We help people in many places around the world who have little chance of a hopeful existence. Learn more about our mission and the projects that we support or have a look at some of our supported projects.
+    
+    Prison care
+    Prison care
+    Despite the fact that the prisoners are there for good reason, the circumstances in many prisons in the world are...
+    Read More
+    Sewing School Projects
+    Sewing School Projects
+    Various sewing machine projects help women in Bangladesh and India to provide for themselves. The women first receive a sewing...
+    Read More
+    Care for the homeless
+    Care for the homeless
+    In Africa, Asia and South America, we support several small local street projects. In most cases our local partners help...
+    Read More
+    
+    </p>
+</div>
+
+<div class="col-md-4 ">
+<div class="panel" id="subcribeform">
+  <div class="panel-body">
+    <h4>Subscribe to our Blog</h4>
+
+  {{wtf.quick_form(subscriber_form)}}
+  {{simplemde.load}}
+</div>
+</div>
+</div>
+{% endblock %}

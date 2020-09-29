@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Montserrat|Neucha|Noto+Serif+JP|Noto+Serif+KR|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://icon2.kisspng.com/20180412/xiw/kisspng-paper-sunset-shimmer-quill-cutie-mark-crusaders-bo-write-5acf53a3231648.3205577215235368031437.jpg">
+{% endblock %}
+
+
+
+{% block content %}
+<br><br><br>
+
+<div class="col-md-8">
+{% for post in posts %}
+
+  <div class="panel">
+    <div class="panel-body responsive">
+      <div class="col-md-8">
+        <div class="text-center">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.posted.strftime('%Y-%m-%d')}}/<a href="#">{{post.category}}</a>/<a href="/post/{{post.id}}?like=1"<i class="fas fa-heart"></i>{{post.like}}</a></h4>
+  </div>
+    <br>
+
+    <p>{{post.post|truncate(350)}}</p>
+    <div class="text-center">
+    <a href="/post/{{post.id}}" >CONTINUE READING...</a>
+  </div>
+  </div>
+  <div id="img" class="col-md-4">
+    <img src="{{url_for('static',filename='css/tech.jpg')}}" class="img-rounded img-responsive">
+  </div>
+</div>
+  </div>
+{% endfor %}
+</div>
+
+
+<div class="jumbotron">
+<p>What kind of growth did we see for IPv6 in 2012?  What did we see in terms of adoption of IPv6 within various industries?  Yesterday our colleague Phil Roberts outlined his view on the “Big Changes In The IPv6 Landscape in 2012“. Phil  wrote about many of the changes that happened over 2012, particularly with World IPv6 Launch in June.  Here are some of the major developments he saw:
+
+  Today, ten percent of the Alexa Top 1000 websites are now enabled with IPv6 and large access networks have enabled IPv6 for their end users, according to measurements we made for World IPv6 Launch.
+  
+  Four of the five largest websites in the world – Google, Facebook, YouTube, Yahoo!, and Wikipedia – all serve IPv6 from their main websites today. In addition, content distribution networks like Limelight and Akamai are providing services to their customers to enable IPv6 hosted content, and hosting companies are making it possible for hosted websites to use IPv6 as well. The three largest web-hosting companies in Germany serve IPv6 for all their hosted websites.
+  
+  Also at the end of 2012, there were significant deployments in access networks. AT&T, Verizon Wireless, and Comcast in North America, RCS&RDS in Romania, CTC and Softbank in Japan, XS4ALL in the Netherlands, Swisscom in Switzerland, DT in Germany, and Internode in Australia all began enabling IPv6 for their end users, all without the end users needing to configure anything in their networks, and in fact, probably, most not even knowing they are using IPv6.
+  
+  All of which is excellent news!  Phil goes on to talk about Google’s measurement of over 1% of their traffic coming in over IPv6 and also the World IPv6 Launch measurements site that contains links to a variety of the sites measuring IPv6 traffic on an ongoing basis.
+  
+  2012 was a great year for IPv6 – and now it’s time to continue building on that momentum.  Have you deployed IPv6 yet for your network(s)? Is your website accessible over IPv6?  Are your DNS entries available over IPv6?
+  
+  If not… how can we help you?  Check out our basic IPv6 information or our list of IPv6 resources to get started.  And if you can’t find what you are looking for, please let us know and we’ll be glad to help you.
+  
+  Let’s make 2013 and even better year for IPv6!
+  
+  IPv6
+  Disclaimer: Viewpoints expressed in this post are those of the author and may or may not reflect official Internet Society positions.
+  
+  Recent Posts
+  Losing the Right to Encryption Means Losing Business
+  The Week in Internet News: Lawmakers Hampered by Poor Internet Service
+  What Does Normal Look Like Now? COVID’s Impact on the Internet
+  The Week in Internet News: Trading Trash for WiFi
+  The Digital Services Act and Why the Architecture of the Internet Must Be Preserved
+  Related articles
+  Tech Matters: Big Changes In The IPv6 Landscape
+  Deploy36011 January 2013
+  Tech Matters: Big Changes In The IPv6 Landscape
+  What kind of growth did we see for IPv6 in 2012?  What did we see in terms of adoption of...
+  
+  World IPv6 Launch Media Report #1 - Mythic Beasts, Telefonica in Peru, Municipal WiFI, CloudFlare and more...
+  IPv66 June 2013
+  World IPv6 Launch Media Report #1 – Mythic Beasts, Telefonica in Peru, Municipal WiFI, CloudFlare and more…
+  We've been thrilled to see all the articles, stories, blog posts, news releases and other media appearing about the anniversary...
+  
+  World IPv6 Launch Media Report #1 - Mythic Beasts, Telefonica in Peru, Municipal WiFI, CloudFlare and more...
+  Deploy3606 June 2013
+  World IPv6 Launch Media Report #1 – Mythic Beasts, Telefonica in Peru, Municipal WiFI, CloudFlare and more…
+  We've been thrilled to see all the articles, stories, blog posts, news releases and other media appearing about the anniversary...
+  
+  </p>
+</div>
+
+<div class="col-md-4 ">
+<div class="panel" id="subcribeform">
+  <div class="panel-body">
+    <h4>Subscribe to our Blog</h4>
+
+  {{wtf.quick_form(subscriber_form)}}
+  {{simplemde.load}}
+</div>
+</div>
+</div>
+{% endblock %}

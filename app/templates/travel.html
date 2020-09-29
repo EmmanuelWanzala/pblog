@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Montserrat|Neucha|Noto+Serif+JP|Noto+Serif+KR|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://icon2.kisspng.com/20180412/xiw/kisspng-paper-sunset-shimmer-quill-cutie-mark-crusaders-bo-write-5acf53a3231648.3205577215235368031437.jpg">
+{% endblock %}
+
+
+
+{% block content %}
+<br><br><br>
+
+<div class="col-md-8">
+{% for post in posts %}
+
+  <div class="panel">
+    <div class="panel-body responsive">
+      <div class="col-md-8">
+        <div class="text-center">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.posted.strftime('%Y-%m-%d')}}/<a href="#">{{post.category}}</a>/<a href="/post/{{post.id}}?like=1"<i class="fas fa-heart"></i>{{post.like}}</a></h4>
+  </div>
+    <br>
+
+    <p>{{post.post|truncate(350)}}</p>
+    <div class="text-center">
+    <a href="/post/{{post.id}}" >CONTINUE READING...</a>
+  </div>
+  </div>
+  <div id="img" class="col-md-4">
+    <img src="{{url_for('static',filename='css/travel.jpg')}}" class="img-rounded img-responsive">
+  </div>
+</div>
+  </div>
+{% endfor %}
+</div>
+
+
+<div class="jumbotron">
+  <p>
+    Is Santorini Really all that it is made out to be? let me tell you what people don’t tell you about Santorini....
+
+Anyone that I have ever met that has been to Santorini, always says how amazing it was! It is supposed to be this amazing place of romance, serenity and gorgeous sunsets...right? A place to unwind and soak up the sun. Those picturesque pictures of the white buildings on the edge of the Caldera seem pretty amazing right?
+
+Well I am not going to lie it is, but...the pictures that you have seen do not tell the whole truth! But I will.
+
+We stayed in Oía in July, which is the main place that you see in the pictures. By day it is infested with people from the cruise ships, visiting (like myself) and others staying on other parts of the island. MY ADVICE: It is better to go out on a boat during the day and get away from the people so that you can enjoy it in the evening. The shops stay open late and people seem to go home after the sunset.
+
+ 
+
+
+THE SUNSETS:
+
+
+ 
+
+
+ 
+
+
+The sunsets from Oia are truly spectacular - some people say the best that they have ever seen in their lives. While they are spectacular, unless you have a house or hotel room with a view of the sunset you will be waiting with 100s of other people wanting to see the sunset. If you want to have any chance of seeing it at all, you will need to arrive at least an hour, if not more ahead of time to even get a spot to view the sunset. The best spot is supposed to be at the “fort” - if you can call it that, as it is falling apart. We were lucky enough to stay in a place called Oia mansion and could watch the sunset in peace from there.
+
+
+ 
+
+
+ 
+
+
+WHERE TO STAY:
+
+
+ 
+
+
+This bring me to where to stay. Well...If you want a view of the Caldera from your room, you better be prepared to pay big money. Accommodation in Oia is by no means cheap. But if you can afford a nice place it is worth the extra money. If you cannot, then a walk into town or staying in one of the other areas with Caldera views should not break the bank as much and is also a super nice option. Or, of course booking in the off season always affords you a better deal.
+
+SHOULD YOU RENT A CAR?
+
+
+ 
+
+
+No! I would highly recommend that you do not rent a car or an ATV, or any vehicle that can transport you anywhere if you are staying in Oia. Firstly, traffic on the island is horrendous! It was terrible driving around the island and even more terrible on an ATV. I thought I was going to die of heat stroke, because of how bad the traffic is. We had to stop so many times and there was no breeze to cool me down. As soon as I got to our destination, I ran into the ocean so that I didn’t pass out from heat exhaustion. It was a truly miserable experience and I still had to go back - which was just as miserable as the way there. Except I got all my clothes wet and it was the only way I survived.
+
+The reason that you do not need a car if you stay in Oia is....you can do everything you want to do from there. Go for a swim, you have a boat tour? Just ask them to pick you up in Ammoudi Bay, you want to go cliff jumping - head down to Ammoudi bay again! Keep in mind if you do go down to Ammoudi bay you have to walk down several hundred steps - but you can always take the donkey’s back up. Which is truly a wild experience and worth it, especially if you have an adventurous side and even if you don’t. There are an endless amount of restaurants in walking distance from everywhere in Oia and the shops. You can literally shop until you drop in oia!
+
+THINGS TO DO?
+
+Well, I thought you would never ask. There are load of things to do in Oia.
+
+SHOPPING:
+
+
+ 
+
+
+You can literally shop until you drop in oia. They have so many shops, I don’t know if you could go to them all if you spent weeks there. But, the nice thing about their shops is they have a lot of things made in Greece - from souvenirs to clothes. Try to stay away from the cheap Chinese made stuff and buy the cool and authentically made items that you cannot get anywhere else.
+
+AMMOUDI BAY: 
+
+
+ 
+
+
+ 
+
+
+This is one of my favorite places in this area. You do have to climb down approximately one million steps to get down to it, but it is totally worth it when you make it. You can also take the donkey’s back up, which is a fun experience in and of itself. In the bay itself you can go for a swim in the crystal clear and well temperatured water - especially in July. Or you can go “cliff” jumping. It is not exactly a cliff, but a cement platform some 25ish feet above the water (depending on the tide of course) and a lot of fun to take a running jump off of it, if you are into that type of thing. When you get down to the bay from the steps, go to your left and continue onwards until you see the platform out in the ocean. You then have to swim over to it and probably wait in a little line before you can jump. This is also the area we went swimming in.
+
+
+ 
+
+
+ 
+
+
+BOAT TOUR OF THE CALDERA:
+
+
+ 
+
+
+We went with Paños and I would recommend that you go with him as well, as he was awesome and it was our favorite thing that we did while we were in Santorini (not counting the donkeys of course). He will take you inside the Caldera to an area where you can swim in a hot spring in the middle of the ocean as the volcano is still active. It was actually a really cool experience and he tells you some really cool information about how the caldera was formed and what not. Then we took a quick snorkel over to our own island with a nice little beach and we got to swim between two continents. Then, he cooked us a delicious dinner and was very able to accommodate my allergies to Gluten, Dairy and a number of other things. Then we stopped at Ammoudi Bay for some cliff jumping, before he dropped us off at the dock. It was a really fantastic day and I wish that we had gone out with him more than once!
+
+
+ 
+
+
+ 
+
+
+EAT:
+
+
+ 
+
+
+I personally did not love the food in Greece, but that is probably because I could not eat the pita or other delicious gluten filled deliciousness. They also did not have any GF bread, pizza, or pasta that we could find. I also hate tomatoes, so while the Greek salads were delicious, I ate way more tomatoes than I probably ever had in my life before then, in that week - as I hate to be wasteful and it was like blasphemy to them to make a Greek salad without tomatoes, it was enough of a bother for them to make it without the cheese (as I am allergic to that too). But, non the less, there are loads of restaurants in Oia and if you like Greek food you will be delighted!
+
+RIDE THE DONKEYS:
+
+ 
+
+
+ 
+
+
+So, you may have seen The SisterHood Of The Traveling Pants - yeah? Well, people have mixed opinions on riding the donkeys and that is fine and I will not be getting into it in this post. If you are one of those that is up for the Craic (Irish word for tons of fun), then a ride on the donkeys back up from Ammoudi bay is something that you should def do! It is a little crazy and not for the faint of heart, as the men just put you up on the donkey (the saddles can be super hot, so bring either a towel to sit on or wear long shorts). After you get on, the donkey takes off whether you are ready or not... Hold on tight and you have no control, so mind your knees on the wall. Enjoy the ride and you will eventually make it up all of the steps, get off and then the donkeys head back down. 
+
+
+ 
+
+
+WATCH THE SUNSET:
+
+
+ 
+
+
+ 
+Oia has some of the most amazing sunsets. The thing is, people know about these sunsets! The best placed to view the sunset is in front of a rental home called Oia Mansion, or there is a ruined castle that many people go to as well. BE WARNED - people line up at least an hour ahead of time to get a good spot to see the sunset. Unless you are super tall you may want to get there ahead of time as the streets are lined with what seems like thousands of people.
+
+ 
+
+YOU TELL ME!
+
+
+ 
+
+Santorini is really nice - it Just might not be the fantasy that everyone has in their mind. You let me know! Have you ever been to Santorini? leave your thoughts in the comment section below! 
+
+
+  </p>
+</div>
+
+<div class="col-md-4 ">
+<div class="panel" id="subcribeform">
+  <div class="panel-body">
+    <h4>Subscribe to our Blog</h4>
+
+  {{wtf.quick_form(subscriber_form)}}
+  {{simplemde.load}}
+</div>
+</div>
+</div>
+{% endblock %}

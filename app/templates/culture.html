@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Montserrat|Neucha|Noto+Serif+JP|Noto+Serif+KR|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://icon2.kisspng.com/20180412/xiw/kisspng-paper-sunset-shimmer-quill-cutie-mark-crusaders-bo-write-5acf53a3231648.3205577215235368031437.jpg">
+{% endblock %}
+
+
+
+{% block content %}
+<br><br><br>
+
+<div class="col-md-8">
+{% for post in posts %}
+
+  <div class="panel">
+    <div class="panel-body responsive">
+      <div class="col-md-8">
+        <div class="text-center">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.posted.strftime('%Y-%m-%d')}}/<a href="#">{{post.category}}</a>/<a href="/post/{{post.id}}?like=1"<i class="fas fa-heart"></i>{{post.like}}</a></h4>
+  </div>
+    <br>
+
+    <p>{{post.post|truncate(350)}}</p>
+    <div class="text-center">
+    <a href="/post/{{post.id}}" >CONTINUE READING...</a>
+  </div>
+  </div>
+  <div id="img" class="col-md-4">
+    <img src="{{url_for('static',filename='css/halloween1.jpg')}}" class="img-rounded img-responsive">
+  </div>
+</div>
+  </div>
+{% endfor %}
+</div>
+
+<div class="jumbotron">
+  <p>a blog dedicated to Spanglophiles and Spanish learners, reflecting the thinking of an English teacher living in Madrid and learning Spanish. Melissa is a British expat who has always been passionate about Spanish life and culture. Even though she spends most of her time speaking and teaching English, she took up the challenge of learning Spanish. The reason she started her blog is to help expats who, like her, have moved to a Spanish-speaking country with a basic language level. Melissa shares her reviews, life experiences, and cultural reflections about Spain and whatever else has helped her in the language learning process.
+
+    Cowbells and Chocolate
+    Event in Switzerland
+    © Cowbells and Chocolate
+    American expat born in Florida, Lisa has been traveling a lot with her family since very young. When she was in high school, she met a Swiss foreign exchange student and fell in love. Following a five-year long-distance relationship including a couple of holiday trips, they got married and moved to Berne. That was the beginning of Lisa's new adventure that she shares on her blog Cowbells and Chocolate. For those looking for some background information about the Swiss way of life, beyond the clichés, it's the right place to be! From traditional Swiss recipes to jokes and learning the languages, she gives you a comprehensive insight about what life looks like in Switzerland.
+    
+    Some people juggle geese
+    Culture in Singapore
+    © Some people juggle geese
+    Moving to Singapore came as a pleasant surprise for Lucy Day, an American expat. Born it Atlanta, she went to study in Chicago where she met her now husband. They graduated together and eventually got married in the USA. A few years later, her husband was awarded a post doctoral fellowship in Singapore and this is how began a new chapter of their life. Passionate about teaching, writing, and editing, Lucy Day holds a blog called Some people juggle geese where she talks about her everyday life, places she has visited, unusual things happening as part of the local culture, not to mention her views about Singlish, the local language.</p>
+  </div>
+
+
+<div class="col-md-4 ">
+<div class="panel" id="subcribeform">
+  <div class="panel-body">
+    <h4>Subscribe to our Blog</h4>
+
+  {{wtf.quick_form(subscriber_form)}}
+  {{simplemde.load}}
+</div>
+</div>
+</div>
+{% endblock %}
