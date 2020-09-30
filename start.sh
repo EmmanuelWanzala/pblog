@@ -4,4 +4,4 @@ export SECRET_KEY='WTF_FORMS'
 
 export DATABASE_URL='postgresql+psycopg2://moringa:Access@localhost/pblog'
 
-python3.8 manage.py server
+python3.8 manage.py 
