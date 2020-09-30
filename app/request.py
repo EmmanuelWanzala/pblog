@@ -1,7 +1,7 @@
 import requests
 from .models import Quotes
 
-base_url = None
+base_url = 
 
 def configure_request(app):
     global base_url
