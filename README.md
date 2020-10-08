@@ -1,4 +1,4 @@
-# Blog
+# lastblogzz
 
 This python web-app was created to emulate a blog and the different user types available.Developed during Moringa Core. This is Week 6's Independent Project.
 
