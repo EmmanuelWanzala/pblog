@@ -1,8 +1,8 @@
 """Initial Migration
 
-Revision ID: 3d5c04919fb6
+Revision ID: 64e4de859e4f
 Revises: 
-Create Date: 2020-09-28 09:52:43.266494
+Create Date: 2020-10-08 10:23:22.329817
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3d5c04919fb6'
+revision = '64e4de859e4f'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -28,11 +28,6 @@ def upgrade():
     sa.Column('posted', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('roles',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('name', sa.String(length=255), nullable=True),
-    sa.PrimaryKeyConstraint('id')
-    )
     op.create_table('subscribers',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=True),
@@ -44,8 +39,6 @@ def upgrade():
     sa.Column('username', sa.String(length=255), nullable=True),
     sa.Column('email', sa.String(length=255), nullable=True),
     sa.Column('password_hash', sa.String(), nullable=True),
-    sa.Column('role_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['role_id'], ['roles.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_users_email'), 'users', ['email'], unique=True)
@@ -71,6 +64,5 @@ def downgrade():
     op.drop_table('users')
     op.drop_index(op.f('ix_subscribers_email'), table_name='subscribers')
     op.drop_table('subscribers')
-    op.drop_table('roles')
     op.drop_table('posts')
     # ### end Alembic commands ###

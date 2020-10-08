@@ -5,7 +5,7 @@ import os
 class Config:
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
     QUOTES_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
-    SQLALCHEMY_TRACK_MODIFICATIONS=True
+    # SQLALCHEMY_TRACK_MODIFICATIONS=True
     SECRET_KEY=os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -20,7 +20,7 @@ class Config:
 class ProdConfig(Config):
     # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/television'
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    DEBUG = False
+    
 
 class TestConfig(Config):
     # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/pitchesone_test'
@@ -28,7 +28,6 @@ class TestConfig(Config):
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
     DEBUG=True
 
 
