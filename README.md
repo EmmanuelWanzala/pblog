@@ -19,6 +19,10 @@ This web-app allows the user to view,comment and like blog posts.The admin can a
 ### Known Bugs
 One can like as many times as possible,not once for each user as was intended
 
+## Live link to the project
+
+https://lastblogzz.herokuapp.com/
+
 ### Behaviour Driven Development
 * The program should return all posts on the home page<br>
 Given:All posts<br>
