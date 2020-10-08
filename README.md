@@ -1,6 +1,6 @@
 # lastblogzz
 
-This python web-app was created to emulate a blog and the different user types available.Developed during Moringa Core. This is Week 6's Independent Project.
+This is a blogging website where people get to read and post blogs as well as get notifications on the latest bogs in various aspects of life.
 
 ## Description
 This web-app allows the user to view,comment and like blog posts.The admin can add/delete posts and delete comments.
@@ -59,3 +59,11 @@ Then: The value is added to the number of likes/comments<br>
 
 ### License
 MIT LICENSE :https://spdx.org/licenses/MIT.html
+
+## Author
+ 
+ Emmanuel John Wanzala
+
+ ## Contacts
+
+ email : wanzalaemmanuel28@gmail.com
